@@ -57,8 +57,6 @@ Sigue estos pasos para generar los diplomas:
   - Asegúrate de configurar la impresora para utilizar la bandeja manual y seleccionar tamaño carta como origen.
   - Es importante tener los diplomas preimpresos en tamaño carta para que el texto se alinee correctamente.
 
-Aquí tienes la sección de "Personalización del Diploma" ajustada para que quede claro que el diseño del diploma puede cambiarse siempre y cuando la posición y el tamaño del área destinada para el nombre no se modifiquen:
-
 ## Personalización del Diploma
 
 - **Ajustes en el Diseño:**
