@@ -9,6 +9,11 @@ import os
 csv_file = 'names.csv'  # Nombre de tu archivo CSV
 df = pd.read_csv(csv_file)
 
+# Asegúrate de que la carpeta para los PDFs exista
+output_dir = 'PDFs para imprimir'
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+
 # Definir la función para crear el PDF
 def crear_diploma(c, nombre):
     # Ruta a la fuente Arial
@@ -26,15 +31,19 @@ def crear_diploma(c, nombre):
     
     c.showPage()
 
-# Crear un único PDF con todas las páginas
-output_filename = "diplomas.pdf"
-c = canvas.Canvas(output_filename, pagesize=landscape(letter))
+# Agrupar por escuela
+escuelas = df.groupby('escuela')
 
-# Crear una página en el PDF para cada nombre
-for index, row in df.iterrows():
-    nombre = row['Nombre']  # Ajusta si el nombre de la columna es diferente
-    crear_diploma(c, nombre)
+# Crear un PDF por escuela
+for nombre_escuela, grupo in escuelas:
+    output_filename = os.path.join(output_dir, f"{nombre_escuela}.pdf")
+    c = canvas.Canvas(output_filename, pagesize=landscape(letter))
+    
+    # Crear una página en el PDF para cada alumno de la escuela
+    for index, row in grupo.iterrows():
+        nombre_alumno = row['nombre']
+        crear_diploma(c, nombre_alumno)
+    
+    c.save()
 
-c.save()
-
-print("Diplomas creados exitosamente.")
+print("PDFs creados exitosamente en la carpeta 'PDFs para imprimir'.")
