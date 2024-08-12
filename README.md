@@ -7,7 +7,7 @@ Este proyecto fue creado para automatizar la generación de diplomas para GitCom
 Los diplomas se generan a partir de un archivo CSV que contiene los nombres de las escuelas y los nombres de los participantes.
 
 - **Importante:** Este repositorio está diseñado para que funcione en un Codespace, asegurando que todas las dependencias estén instaladas automáticamente.
-- **Formato del Diploma:** Los diplomas están configurados para imprimirse en tamaño carta, con un espacio reservado para la imagen y el nombre del participante en una posición específica.
+- **Formato del Diploma:**  El código está configurado para diplomas en tamaño carta, con un espacio reservado específicamente para el nombre del participante. Este formato fue utilizado en la edición actual, pero puede adaptarse a cualquier otro diploma que tenga el nombre del participante en la misma posición.
 
 <img src="https://github.com/user-attachments/assets/e4c11d16-21ee-4609-a45d-b28f16ed41f3" alt="diploma" width="600">
 
